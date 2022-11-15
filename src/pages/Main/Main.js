@@ -1,38 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import DataTable from '../../views/DataTable';
+import Slider from '../../views/Slider';
+import axios from 'axios';
 import './Main.scss';
+import Client from '../../views/Client';
 
-// 통신
-const runServer = parms => {
-  fetch(`http://localhost:4000/users/signup`, {
-    method: 'GET',
-    header: { 'Content-Type': `application/json` },
-  })
-    .then(response => {
-      return response.json();
-    })
-    .then(result => {
-      console.log(result);
-    });
-};
-
-runServer();
 const Main = () => {
+  const [data, setData] = useState([]);
+  const token = localStorage.getItem('token');
+
+  const header = {
+    headers: {
+      Authorization: 'Bearer ' + token,
+    },
+  };
+  useEffect(() => {
+    axios
+      .get('http://localhost:4000/accounts', header)
+      .then(({ data }) => setData(data));
+    Client();
+  }, []);
+  console.log(data);
+
   return (
-    <div className="mainWrap">
-      <div className="sider">
-        <ul>
-          <li>계좌</li>
-          <li>계좌</li>
-          <li>계좌</li>
-        </ul>
+    <>
+      <div className="mainWrap">
+        <Slider />
+        <DataTable props={data} />
       </div>
-      <div className="inner">
-        <div className="header">header</div>
-        <div className="contents">contents</div>
-        <div className="footer">footer</div>
-      </div>
-    </div>
+      <div className="siderBar" />
+      <div className="contentWrap" />
+      <div className="content" />
+    </>
   );
 };
-
 export default Main;
