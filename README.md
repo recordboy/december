@@ -63,8 +63,9 @@ $ npm install -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-### 라우터 설치
+### 라우터 && 스타일 컴포넌트 설치
 
 ```
-$ npm install react-router-dom --save
+$ npm i react-router-dom
+$ npm i styled-components
 ```
