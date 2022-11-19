@@ -62,3 +62,9 @@ $ npm install -D prettier eslint-config-prettier eslint-plugin-prettier
   "files.autoSave": "onFocusChange"
 }
 ```
+
+### 라우터 설치
+
+```
+$ npm install react-router-dom --save
+```
