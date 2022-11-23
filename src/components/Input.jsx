@@ -6,6 +6,8 @@ const StyledInputBox = styled.label`
   position: relative;
   margin-top: 10px;
   padding-left: 60px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 const StyledInputTit = styled.span`
   position: absolute;
@@ -18,6 +20,7 @@ const StyledInput = styled.input`
   border-radius: 5px;
   box-sizing: border-box;
   padding: 2px 5px;
+  width: 100%;
   height: 35px;
   font-size: 14px;
   background: none;

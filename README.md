@@ -69,3 +69,14 @@ $ npm install -D prettier eslint-config-prettier eslint-plugin-prettier
 $ npm i react-router-dom
 $ npm i styled-components
 ```
+
+리액트쿼리
+
+react-query는 리액트 개발 하면서 귀찮은 부분들을 해결해준다
+
+useQuery
+
+데이터 겟해서 가져온것 관리
+포스트는 useMutation
+
+리액
